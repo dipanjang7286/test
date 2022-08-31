@@ -21,25 +21,45 @@
                 <div class="form-group">
                     <label for="">Name</label>
                     <input type="text" name="name" id="name" class="form-control" placeholder="Enter Your Full Name"
-                        aria-describedby="helpId">
+                        value="{{old('name')}}" aria-describedby="helpId">
+                        <span class="text-danger" >
+                            @error('name')
+                                {{$message}}
+                            @enderror
+                        </span>
                     {{-- <small id="helpId" class="text-muted">Help Text</small> --}}
                 </div>
                 <div class="form-group mb-3">
                     <label for="">Email ID</label>
-                    <input type="text" name="eid" id="eid" class="form-control" placeholder="Enter Your Email Id"
-                        aria-describedby="helpId">
+                    <input type="text" name="email" id="eid" class="form-control" placeholder="Enter Your Email Id"
+                        value="{{old('email')}}" aria-describedby="helpId">
+                        <span class="text-danger" >
+                            @error('email')
+                                {{$message}}
+                            @enderror
+                        </span>
                     {{-- <small id="helpId" class="text-muted">Help Text</small> --}}
                 </div>
                 <div class="form-group mb-3">
                     <label for="">Password</label>
-                    <input type="password" name="pass" id="pass" class="form-control" placeholder="Enter Password"
+                    <input type="password" name="password" id="pass" class="form-control" placeholder="Enter Password"
                         aria-describedby="helpId">
+                        <span class="text-danger" >
+                            @error('password')
+                                {{$message}}
+                            @enderror
+                        </span>
                     {{-- <small id="helpId" class="text-muted">Help Text</small> --}}
                 </div>
                 <div class="form-group mb-3">
                     <label for="">Confirm Password</label>
-                    <input type="password" name="cpass" id="pass" class="form-control" placeholder="Enter Password"
+                    <input type="password" name="password_confirmation" id="pass" class="form-control" placeholder="Enter Password"
                         aria-describedby="helpId">
+                        <span class="text-danger" >
+                            @error('password_confirmation')
+                                {{$message}}
+                            @enderror
+                        </span>
                     {{-- <small id="helpId" class="text-muted">Help Text</small> --}}
                 </div>
                 <button class="btn btn-primary">Submit</button>
