@@ -59,6 +59,65 @@
                 </span>
                 {{-- <small id="helpId" class="text-muted">Help Text</small> --}}
             </div>
+            <div class="form-group mb-3">
+                <label for="">Address</label>
+                <input type="text" name="address" id="address" class="form-control" placeholder="Enter Address"
+                    aria-describedby="helpId">
+                <span class="text-danger">
+                    @error('Address')
+                    {{$message}}
+                    @enderror
+                </span>
+                {{-- <small id="helpId" class="text-muted">Help Text</small> --}}
+            </div>
+            <div class="form-group mb-3">
+                <label for="">Country</label>
+                <input type="text" name="country" id="country" class="form-control" placeholder="Enter country"
+                    aria-describedby="helpId">
+                <span class="text-danger">
+                    @error('country')
+                    {{$message}}
+                    @enderror
+                </span>
+                {{-- <small id="helpId" class="text-muted">Help Text</small> --}}
+            </div>
+            <div class="form-group mb-3">
+                <label for="">State</label>
+                <input type="text" name="state" id="state" class="form-control" placeholder="Enter state"
+                    aria-describedby="helpId">
+                <span class="text-danger">
+                    @error('state')
+                    {{$message}}
+                    @enderror
+                </span>
+                {{-- <small id="helpId" class="text-muted">Help Text</small> --}}
+            </div>
+            <div class="form-group mb-3">
+                <label for="">Gender</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="m" id="inlineRadioM" value="m">
+                    <label class="form-check-label" for="inlineRadio1">M</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="f" id="inlineRadioF" value="f">
+                    <label class="form-check-label" for="inlineRadio2">F</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="o" id="inlineRadioO" value="o">
+                    <label class="form-check-label" for="inlineRadio3">O</label>
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="">DOB</label>
+                <input type="date" name="dob" id="dob" class="form-control" placeholder="Enter date of birth"
+                    aria-describedby="helpId">
+                <span class="text-danger">
+                    @error('dob')
+                    {{$message}}
+                    @enderror
+                </span>
+            </div>
+
             <button class="btn btn-primary">Submit</button>
         </div>
     </form>

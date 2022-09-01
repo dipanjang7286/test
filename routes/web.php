@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\PhotoController;
@@ -59,6 +60,7 @@ Route::resource('/photo', PhotoController::class);
 
 Route::get('/register',[RegistrationController::class, 'index']);
 Route::post('/register', [RegistrationController::class, 'register']);
+Route::get('/customer_register', [CustomerController::class, 'index']);
 
 Route::get('/customer',function(){
     $customers = Customer::all();
