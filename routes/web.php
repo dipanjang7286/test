@@ -60,10 +60,13 @@ Route::resource('/photo', PhotoController::class);
 
 Route::get('/register',[RegistrationController::class, 'index']);
 Route::post('/register', [RegistrationController::class, 'register']);
-Route::get('/customer_register', [CustomerController::class, 'index']);
 
-Route::get('/customer',function(){
-    $customers = Customer::all();
-    echo '<pre>';
-    print_r($customers);
-});
+Route::get('/customer', [CustomerController::class, 'create']);
+Route::get('/customer/view',[CustomerController::class,'view']);
+Route::post('/customer', [CustomerController::class, 'store']);
+
+// Route::get('/customer',function(){
+//     $customers = Customer::all();
+//     echo '<pre>';
+//     print_r($customers);
+// });

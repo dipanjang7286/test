@@ -9,7 +9,7 @@
     <title>Customer Registration</title>
 </head>
 <body>
-    <form action="{{url('/')}}/register" method="post">
+    <form action="{{url('/')}}/customer" method="post">
         @csrf
         <div class="container form-control mt-3">
             <h2 class="text-center">
@@ -62,7 +62,7 @@
             <div class="form-group mb-3">
                 <label for="">Address</label>
                 <input type="text" name="address" id="address" class="form-control" placeholder="Enter Address"
-                    aria-describedby="helpId">
+                    value="{{old('address')}}" aria-describedby="helpId">
                 <span class="text-danger">
                     @error('Address')
                     {{$message}}
@@ -73,7 +73,7 @@
             <div class="form-group mb-3">
                 <label for="">Country</label>
                 <input type="text" name="country" id="country" class="form-control" placeholder="Enter country"
-                    aria-describedby="helpId">
+                    value="{{old('country')}}" aria-describedby="helpId">
                 <span class="text-danger">
                     @error('country')
                     {{$message}}
@@ -84,7 +84,7 @@
             <div class="form-group mb-3">
                 <label for="">State</label>
                 <input type="text" name="state" id="state" class="form-control" placeholder="Enter state"
-                    aria-describedby="helpId">
+                    value="{{old('state')}}" aria-describedby="helpId">
                 <span class="text-danger">
                     @error('state')
                     {{$message}}
@@ -95,22 +95,27 @@
             <div class="form-group mb-3">
                 <label for="">Gender</label>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="m" id="inlineRadioM" value="m">
+                    <input class="form-check-input" type="radio" name="gender" id="inlineRadioM" value="m">
                     <label class="form-check-label" for="inlineRadio1">M</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="f" id="inlineRadioF" value="f">
+                    <input class="form-check-input" type="radio" name="gender" id="inlineRadioF" value="f">
                     <label class="form-check-label" for="inlineRadio2">F</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="o" id="inlineRadioO" value="o">
+                    <input class="form-check-input" type="radio" name="gender" id="inlineRadioO" value="o">
                     <label class="form-check-label" for="inlineRadio3">O</label>
                 </div>
+                <span class="text-danger">
+                    @error('gender')
+                    {{$message}}
+                    @enderror
+                </span>
             </div>
             <div class="form-group mb-3">
                 <label for="">DOB</label>
                 <input type="date" name="dob" id="dob" class="form-control" placeholder="Enter date of birth"
-                    aria-describedby="helpId">
+                    value="{{old('dob')}}" aria-describedby="helpId">
                 <span class="text-danger">
                     @error('dob')
                     {{$message}}
